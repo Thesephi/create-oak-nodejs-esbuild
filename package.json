@@ -1,0 +1,27 @@
+{
+  "name": "create-oak-nodejs-esbuild",
+  "description": "npm init template for a Node.js application using oak & oak-routing-ctrl",
+  "version": "1.0.0",
+  "main": "./lib/main.js",
+  "bin": "./lib/main.js",
+  "exports": {
+    ".": "./lib/main.js"
+  },
+  "scripts": {
+    "dr": "npm publish --dry-run"
+  },
+  "dependencies": {
+    "init-package-json": "^6.0.3"
+  },
+  "license": "MIT",
+  "keywords": [
+    "oak",
+    "oak-routing-ctrl",
+    "nodejs",
+    "typescript",
+    "decorator",
+    "api",
+    "scaffold",
+    "esbuild"
+  ]
+}
