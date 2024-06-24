@@ -1,3 +1,9 @@
+## [1.2.0] - 2024-06-24
+
+### Fixed
+
+- `npm run dev` behaves as expected
+
 ## [1.1.0] - 2024-06-23
 
 ### Fixed
