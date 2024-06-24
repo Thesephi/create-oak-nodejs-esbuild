@@ -1,3 +1,9 @@
+## [1.2.1] - 2024-06-24
+
+### Fixed
+
+- existence guaranteed for `dist/bundle.js` in all cases
+
 ## [1.2.0] - 2024-06-24
 
 ### Fixed

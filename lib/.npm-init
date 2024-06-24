@@ -8,9 +8,10 @@ module.exports = {
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:watch": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/bundle.js --watch",
-    "start:watch": "node --watch dist/bundle.js",
-    "dev": "(trap 'kill 0' SIGINT; npm run start:watch & npm run build:watch)"
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/bundle.js",
+    "prestart": "mkdir -p dist && touch dist/bundle.js",
+    "start": "node --watch dist/bundle.js",
+    "dev": "(trap 'kill 0' SIGINT; npm run start & npm run build -- --watch)"
   },
   "devDependencies": {
     "@types/node": "^20.14.8",
