@@ -1,3 +1,9 @@
+## [1.4.1] - 2024-07-14
+
+### Changed
+
+- minor improvements for the sample test spec file
+
 ## [1.4.0] - 2024-07-14
 
 ### Added

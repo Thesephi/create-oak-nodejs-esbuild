@@ -12,9 +12,7 @@ import { spawn } from "node:child_process";
 let cp;
 let cpExited;
 
-const waitFor = (ms = 3000) => new Promise((resolve) => {
-  setTimeout(resolve, ms);
-});
+const waitFor = (ms = 3000) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const tryFetch = async (url, retry = 0, maxRetries = 5) => {
   try {
@@ -34,15 +32,16 @@ function killCp() {
   }
 }
 
-process.on("uncaughtExcception", () => {
-  console.debug("test: uncaughtException");
+process.on("uncaughtExcception", (e) => {
+  console.error("test: uncaughtException", e.stack);
   killCp();
 });
 
 describe("Test oak-routing-ctrl app build bundle", async () => {
   before(() => {
     cp = spawn("node", ["dist/bundle.js"]);
-    cp.on("error", (err) => { console.error(err.stack); });
+    cp.stderr?.on("data", (data) => console.error(`test process stderr: ${data}`));
+    cp.on("error", (err) => console.error(err.stack));
     cp.on("close", (code) => { cpExited = true; });
   });
   after(() => { killCp(); });
