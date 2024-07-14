@@ -1,3 +1,14 @@
+## [1.4.0] - 2024-07-14
+
+### Added
+
+- template code to support OpenAPI Spec serving
+- template test code to cover OpenAPI Spec serving
+
+### Changed
+
+- library upgrade (`@dklab/oak-routing-ctrl@^0.8.6`)
+
 ## [1.3.0] - 2024-07-14
 
 ### Added

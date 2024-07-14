@@ -1,3 +1,10 @@
+/**
+ * Forewords:
+ * This file is just an example of how we may implement test logic for
+ * this project. You can throw this whole file away and write your own
+ * tests using whichever test framework you prefer.
+ */
+
 import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { spawn } from "node:child_process";
@@ -32,19 +39,23 @@ process.on("uncaughtExcception", () => {
   killCp();
 });
 
-describe("Test oak-routing-ctrl app", async () => {
+describe("Test oak-routing-ctrl app build bundle", async () => {
   before(() => {
     cp = spawn("node", ["dist/bundle.js"]);
-    cp.on("close", (code) => {
-      cpExited = true;
-    });
+    cp.on("error", (err) => { console.error(err.stack); });
+    cp.on("close", (code) => { cpExited = true; });
   });
-  after(() => {
-    killCp();
-  });
+  after(() => { killCp(); });
+
   it("call /v1/hello/:name", async () => {
     const response = await tryFetch("http://127.0.0.1:1993/v1/hello/tester");
     const respText = await response.text();
     assert.strictEqual(respText, "hello, tester");
+  });
+
+  it("call /oas.json", async () => {
+    const response = await tryFetch("http://127.0.0.1:1993/oas.json");
+    const respJson = await response.json();
+    assert.deepEqual(respJson, {"openapi":"3.0.0","info":{"version":"1.0.0","title":"My API","description":"This is the API"},"servers":[{"url":"/"}],"components":{"schemas":{},"parameters":{}},"paths":{"/v1/hello/{name}":{"get":{"parameters":[{"schema":{"type":"string"},"required":true,"name":"name","in":"path"}],"responses":{"200":{"description":"Success","content":{"text/html":{"schema":{"type":"string"}}}}}}}}});
   });
 });
