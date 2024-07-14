@@ -20,7 +20,7 @@ module.exports = {
     "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@jsr/dklab__oak-routing-ctrl": "^0.8.5",
+    "@jsr/dklab__oak-routing-ctrl": "^0.8.6",
     "@jsr/oak__oak": "^16.1.0"
   }
 }
