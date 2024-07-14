@@ -1,3 +1,14 @@
+## [1.3.0] - 2024-07-14
+
+### Added
+
+- template test script (`npm test`)
+- support for `-y` (alternatively: `--yes`, `-f`, `--force`) flag (example: `npm create oak-bun -- -y`)
+
+### Changed
+
+- library upgrades (`@dklab/oak-routing-ctrl@^0.8.5`, `typescript@^5.5.3`, `esbuild@^0.23.0`, `@types/node@^20.14.10`)
+
 ## [1.2.1] - 2024-06-24
 
 ### Fixed
