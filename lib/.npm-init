@@ -1,25 +1,26 @@
 console.log('scaffolding project in', dirname, '...')
 
 module.exports = {
-  "name": prompt("package name", "my-oak-nodejs-esbuild", (pgkName) => pgkName),
-  "version": prompt("version", "1.0.0", (v) => v),
-  "description": prompt("description", undefined, (desc) => desc),
-  "author": prompt("author", undefined, (person) => person),
+  "name": yes ? "my-oak-nodejs-esbuild" : prompt("package name", "my-oak-nodejs-esbuild", (pgkName) => pgkName),
+  "version": yes ? "1.0.0" : prompt("version", "1.0.0", (v) => v),
+  "description": yes ? undefined : prompt("description", undefined, (desc) => desc),
+  "author": yes ? undefined : prompt("author", undefined, (person) => person),
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "npm run build",
+    "test": "node --test",
     "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=esm --outfile=dist/bundle.js",
     "prestart": "mkdir -p dist && touch dist/bundle.js",
     "start": "node --watch dist/bundle.js",
     "dev": "(trap 'kill 0' SIGINT; npm run start & npm run build -- --watch)"
   },
   "devDependencies": {
-    "@types/node": "^20.14.8",
-    "esbuild": "0.21.5",
-    "typescript": "^5.5.2"
+    "@types/node": "^20.14.10",
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.3"
   },
   "dependencies": {
-    "@jsr/dklab__oak-routing-ctrl": "^0.7.4",
+    "@jsr/dklab__oak-routing-ctrl": "^0.8.5",
     "@jsr/oak__oak": "^16.1.0"
   }
 }
