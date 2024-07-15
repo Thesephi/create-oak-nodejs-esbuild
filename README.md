@@ -10,5 +10,5 @@ Read more:
 # How to use this template
 
 ```bash
-npm create oak-nodejs-esbuild
+npm create oak-nodejs-esbuild@latest
 ```

@@ -20,7 +20,7 @@
 ### Added
 
 - template test script (`npm test`)
-- support for `-y` (alternatively: `--yes`, `-f`, `--force`) flag (example: `npm create oak-bun -- -y`)
+- support for `-y` (alternatively: `--yes`, `-f`, `--force`) flag (example: `npm create oak-nodejs-esbuild -- -y`)
 
 ### Changed
 
