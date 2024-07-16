@@ -1,3 +1,9 @@
+## [1.4.2] - 2024-07-16
+
+### Changed
+
+- library upgrades (`@dklab/oak-routing-ctrl@^0.9.0`, `@types/node@^20.14.11`)
+
 ## [1.4.1] - 2024-07-14
 
 ### Changed
