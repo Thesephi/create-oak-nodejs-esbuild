@@ -15,12 +15,12 @@ module.exports = {
     "dev": "(trap 'kill 0' SIGINT; npm run start & npm run build -- --watch)"
   },
   "devDependencies": {
-    "@types/node": "^20.14.11",
-    "esbuild": "^0.23.0",
-    "typescript": "^5.5.3"
+    "@types/node": "^20.16.5",
+    "esbuild": "^0.23.1",
+    "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@jsr/dklab__oak-routing-ctrl": "^0.9.0",
-    "@jsr/oak__oak": "^16.1.0"
+    "@jsr/dklab__oak-routing-ctrl": "^0.11.0",
+    "@jsr/oak__oak": "^17.0.0"
   }
 }
