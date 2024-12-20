@@ -16,6 +16,9 @@
   "dependencies": {
     "init-package-json": "^6.0.3"
   },
+  "repository": {
+    "url": "https://github.com/Thesephi/create-oak-nodejs-esbuild"
+  },
   "license": "MIT",
   "keywords": [
     "oak",
